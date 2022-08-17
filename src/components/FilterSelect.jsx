@@ -97,7 +97,7 @@ const FilterSelect = (props) => {
             }}
           />
           <img
-            style={{ width: 50, height: 50 }}
+            style={{ width: 50, height: 30 }}
             src={calendar}
             onClick={openDatepicker}
           />
