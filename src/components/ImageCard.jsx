@@ -56,7 +56,7 @@ const ImageCard = ({ data }) => {
                 </label>
                 <img className="text-violet-400 text-lg w-3 mr-2" src={bath} />
                 <label className="mr-2 text-xs">
-                  {area}
+                  {area + " m"}
                   <sup>2</sup>{" "}
                 </label>
               </div>
