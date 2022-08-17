@@ -44,7 +44,10 @@ const SearchToolbar = (props) => {
         </div>
         <div className=" bg-white w-2/12 flex items-end content-end">
           <div className=" flex-grow ">
-            <button className="bg-violet-500 hover:bg-violet-700 block ml-auto text-white font-bold py-2 px-4 rounded">
+            <button
+              onClick={props.onSearch}
+              className="bg-violet-500 hover:bg-violet-700 block ml-auto text-white font-bold py-2 px-4 rounded"
+            >
               Search
             </button>
           </div>

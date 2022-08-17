@@ -8,39 +8,45 @@ import {
   commercial,
 } from "./assets/data/data";
 function App() {
-  // const [dataSelected, setDataSelected] = useState({});
+  const [dataSelected, setDataSelected] = useState({});
   const [dataPassed, setDataPassed] = useState(originalData);
   const onChange = (value) => {
     console.log("value!!!", value);
-    // setDataSelected(value);
+    setDataSelected(value);
+
+    console.log("dataPassed", dataPassed);
+  };
+  const onSearch = () => {
     let data1 = originalData;
-    if (value?.location) {
-      data1 = data1.filter((i) => i.state === value?.location);
+    if (dataSelected?.location) {
+      data1 = data1.filter((i) => i.state === dataSelected?.location);
       setDataPassed(data1);
     } else {
       setDataPassed(data1);
     }
-    if (value?.propertyType) {
-      data1 = data1.filter((i) => i.propertyType === value?.propertyType);
-      setDataPassed(data1);
-    } else {
-      setDataPassed(data1);
-    }
-    if (value?.price?.min) {
+    if (dataSelected?.propertyType) {
       data1 = data1.filter(
-        (i) => i.price >= value?.price?.min && i.price <= value?.price?.max
+        (i) => i.propertyType === dataSelected?.propertyType
       );
       setDataPassed(data1);
     } else {
       setDataPassed(data1);
     }
-    console.log("dataPassed", dataPassed);
+    if (dataSelected?.price?.min) {
+      data1 = data1.filter(
+        (i) =>
+          i.price >= dataSelected?.price?.min &&
+          i.price <= dataSelected?.price?.max
+      );
+      setDataPassed(data1);
+    } else {
+      setDataPassed(data1);
+    }
   };
-
   return (
     <div className="flex flex-col bg-violet-50">
       <SearchPropertiesToRent />
-      <SearchToolbar onChange={onChange} />
+      <SearchToolbar onChange={onChange} onSearch={onSearch} />
       <ImageCard data={dataPassed} />
     </div>
   );
