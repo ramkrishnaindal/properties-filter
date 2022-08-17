@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { data, residential, commercial } from "../assets/data/data";
 import calendar from "../assets/images/calendar.png";
 const FilterSelect = (props) => {
-  console.log("data", data);
+  // console.log("data", data);
   const [startDate, setStartDate] = useState(null);
   const calendarRef = useRef();
   const [state, setState] = useState();
@@ -17,14 +17,17 @@ const FilterSelect = (props) => {
   }
   const handleStateChange = (selectedOptions) => {
     setState(selectedOptions);
+    props.onChange(selectedOptions.value);
   };
   const handlePriceChange = (selectedOptions) => {
     debugger;
-    console.log("priceSelected", selectedOptions);
+    // console.log("priceSelected", selectedOptions);
     setPrice(selectedOptions);
+    props.onChange(selectedOptions.value);
   };
   const handlePropertyTypeChange = (selectedOptions) => {
     setPropertyTypeSelected(selectedOptions);
+    props.onChange(selectedOptions.value);
   };
   const openDatepicker = () => {
     calendarRef.current.setOpen(true);
@@ -46,12 +49,14 @@ const FilterSelect = (props) => {
       dataToUse = data;
     }
     const states = dataToUse.map((a) => a.state).filter(onlyUnique);
-    console.log("states", states);
+    states.unshift("");
+    // console.log("states", states);
     return states.map((i) => ({ label: i, value: i }));
   };
-  console.log("props", props);
+  // console.log("props", props);
   const { widthPerc, selectType, propertyType } = props;
   const priceRanges = [
+    { label: "", value: {} },
     { label: "$100-$400", value: { min: 100, max: 400 } },
     { label: "$400-$700", value: { min: 400, max: 700 } },
     { label: "$1100-$1400", value: { min: 1100, max: 1400 } },
@@ -72,16 +77,27 @@ const FilterSelect = (props) => {
       break;
     case "when":
       component = (
-        <label style={{ display: "flex", width: "90%", marginRight: 10 }}>
+        <label
+          style={{
+            display: "flex",
+            width: "100%",
+            marginRight: 10,
+            border: "1px solid lightgray",
+            padding: 4,
+          }}
+        >
           <DatePicker
             placeholderText={"Select move-in date"}
             selected={startDate}
             ref={calendarRef}
             style={{ width: "80%" }}
-            onChange={(date) => setStartDate(date)}
+            onChange={(date) => {
+              setStartDate(date);
+              props.onChange(date);
+            }}
           />
           <img
-            style={{ width: 50, height: 30, marginTop: -5 }}
+            style={{ width: 50, height: 30 }}
             src={calendar}
             onClick={openDatepicker}
           />
@@ -105,6 +121,7 @@ const FilterSelect = (props) => {
         <Select
           className={`min-w-[${widthPerc || 30}%]`}
           options={[
+            { label: "", value: "" },
             { label: "Residential", value: "Residential" },
             { label: "Commercial", value: "Commercial" },
           ]}

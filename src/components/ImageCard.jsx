@@ -2,9 +2,8 @@ import React from "react";
 import heart from "../assets/images/heart.svg";
 import bed from "../assets/images/bed-svgrepo-com.svg";
 import bath from "../assets/images/bathtub-svgrepo-com.svg";
-import { data } from "../assets/data/data";
-const ImageCard = () => {
-  const arrImageIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// import { data } from "../assets/data/data";
+const ImageCard = ({ data }) => {
   // console.log("arrImageIndex",arrImageIndex);
   return (
     <div className="p-10 bg-violet-50 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">

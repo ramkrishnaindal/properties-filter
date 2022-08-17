@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import FilterWrapper from "./FilterWrapper";
-const SearchToolbar = () => {
+const SearchToolbar = (props) => {
   const [toolbarData, setToolbarData] = useState({});
   const onChange = (property, value) => {
     setToolbarData((prev) => ({ ...prev, [property]: value }));
+    props.onChange({ ...toolbarData, [property]: value });
   };
+  // console.log("toolbarData", toolbarData);
   return (
     <div className="px-10">
       <section className="px-5 pb-3 bg-white text-gray-600 body-font flex content-between gap-5">
