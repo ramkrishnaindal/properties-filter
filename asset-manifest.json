@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/properties-filter/static/css/main.d67bbfb1.css",
-    "main.js": "/properties-filter/static/js/main.028b89f3.js",
+    "main.css": "/properties-filter/static/css/main.8ca3e9c0.css",
+    "main.js": "/properties-filter/static/js/main.21c1a003.js",
     "static/media/img2.jpg": "/properties-filter/static/media/img2.cb8bde4ef51c17449891.jpg",
     "static/media/img5.jpg": "/properties-filter/static/media/img5.f98c6e0a8efdc00e4939.jpg",
     "static/media/img6.jpg": "/properties-filter/static/media/img6.976b6e3095c6f1dd8022.jpg",
     "static/media/img1.jpg": "/properties-filter/static/media/img1.113afb166c7684d46405.jpg",
     "static/media/img3.jpg": "/properties-filter/static/media/img3.a1515a2d3d202abafff7.jpg",
     "static/media/img4.jpg": "/properties-filter/static/media/img4.8f5fd66dac50315c770b.jpg",
+    "static/media/bathtub-svgrepo-com.svg": "/properties-filter/static/media/bathtub-svgrepo-com.7ed4720713e484b8260c605d0fe7348d.svg",
+    "static/media/bed-svgrepo-com.svg": "/properties-filter/static/media/bed-svgrepo-com.1005d555eaa9ed40cb2d25dcf9e1d577.svg",
     "index.html": "/properties-filter/index.html",
-    "main.d67bbfb1.css.map": "/properties-filter/static/css/main.d67bbfb1.css.map",
-    "main.028b89f3.js.map": "/properties-filter/static/js/main.028b89f3.js.map"
+    "static/media/heart.svg": "/properties-filter/static/media/heart.ee1e7d2a2757ae6c6d007b510587df8f.svg",
+    "main.8ca3e9c0.css.map": "/properties-filter/static/css/main.8ca3e9c0.css.map",
+    "main.21c1a003.js.map": "/properties-filter/static/js/main.21c1a003.js.map"
   },
   "entrypoints": [
-    "static/css/main.d67bbfb1.css",
-    "static/js/main.028b89f3.js"
+    "static/css/main.8ca3e9c0.css",
+    "static/js/main.21c1a003.js"
   ]
 }
